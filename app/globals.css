@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+
+  --color-ink: #0c1e1e;
+  --color-ink-soft: #132b2a;
+  --color-ink-line: #24413e;
+  --color-gold: #c9a66b;
+  --color-gold-bright: #e6c989;
+  --color-parchment: #f3ede0;
+  --color-parchment-dim: #b9c4be;
+  --color-leaf: #2f6d5b;
+  --color-leaf-bright: #3f8a72;
+
+  --color-fajr: #1b2a4a;
+  --color-dhuhr: #c9b27c;
+  --color-asr: #6e8c6a;
+  --color-maghrib: #c97b3d;
+  --color-isha: #2a2f55;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-parchment);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@keyframes sky-drift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@keyframes rise {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-sky {
+  animation: sky-drift 18s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.animate-twinkle {
+  animation: twinkle 3.5s ease-in-out infinite;
+}
