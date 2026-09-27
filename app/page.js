@@ -10,7 +10,7 @@ import DownloadSection from "@/components/DownloadSection";
 import Footer from "@/components/Footer";
 
 const REPO_URL = "https://github.com/me-nayeem/fajr_to_isha";
-const DOWNLOAD_URL = `${REPO_URL}/releases/latest`;
+const DOWNLOAD_URL = `${REPO_URL}/releases/latest/download/fajr2isha.apk`;
 
 export default function Home() {
   return (
